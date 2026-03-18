@@ -1,19 +1,22 @@
 const steps = [
-  { title: "Book", text: "Select service, date, and time slot in under 1 minute." },
-  { title: "We Visit", text: "Mechanic reaches your Deoghar address with tools." },
-  { title: "We Fix", text: "Get doorstep repair + payment by Cash or UPI." }
+  { title: "Book", text: "Choose your bike service and preferred time slot." },
+  { title: "We Visit", text: "Mechanic arrives at your address in Deoghar." },
+  { title: "We Fix", text: "Transparent service at home with Cash or UPI payment." }
 ];
 
 export function HowItWorks() {
   return (
-    <section className="grid gap-3 sm:grid-cols-3">
-      {steps.map((step, idx) => (
-        <article key={step.title} className="card">
-          <p className="label">Step {idx + 1}</p>
-          <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
-          <p className="mt-2 text-sm text-slate-300">{step.text}</p>
-        </article>
-      ))}
+    <section className="section pt-0">
+      <h2 className="text-2xl font-semibold">How it works</h2>
+      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        {steps.map((step, idx) => (
+          <article key={step.title} className="card">
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Step {idx + 1}</p>
+            <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
+            <p className="mt-2 text-sm text-slate-600">{step.text}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

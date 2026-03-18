@@ -64,74 +64,74 @@ export function BookingSection() {
   };
 
   const inputClasses =
-    "mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-2 text-sm text-slate-100 focus:border-cyan-300/70 focus:outline-none";
+    "mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-slate-900 focus:outline-none";
 
   return (
-    <section id="booking" className="card">
-      <p className="label">Booking</p>
-      <h2 className="mt-1 text-xl font-semibold">Book a Home Visit</h2>
-      <p className="mt-1 text-xs text-slate-400">Launch area: Deoghar, Jharkhand only.</p>
+    <section id="booking" className="section pt-0">
+      <div className="card">
+        <div className="mb-4">
+          <h2 className="text-2xl font-semibold">Book a Home Visit</h2>
+          <p className="mt-1 text-sm text-slate-600">Currently serving Deoghar, Jharkhand only.</p>
+        </div>
 
-      <form onSubmit={handleSubmit} className="mt-4 grid gap-4 sm:grid-cols-2">
-        <label className="text-sm">Customer name*
-          <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm">Mobile number*
-          <input required value={form.mobile} onChange={(e) => setForm({ ...form, mobile: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm">Bike brand
-          <input value={form.bikeBrand} onChange={(e) => setForm({ ...form, bikeBrand: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm">Bike model
-          <input value={form.bikeModel} onChange={(e) => setForm({ ...form, bikeModel: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm sm:col-span-2">Service needed*
-          <select required value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className={inputClasses}>
-            <option value="">Select a service</option>
-            {services.map((service) => (
-              <option value={service.name} key={service.id}>{service.name}</option>
-            ))}
-          </select>
-        </label>
-        <label className="text-sm">Preferred date*
-          <input type="date" required value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm">Preferred time slot*
-          <select required value={form.timeSlot} onChange={(e) => setForm({ ...form, timeSlot: e.target.value })} className={inputClasses}>
-            <option value="">Select slot</option>
-            <option>8:00 AM - 10:00 AM</option>
-            <option>10:00 AM - 12:00 PM</option>
-            <option>12:00 PM - 2:00 PM</option>
-            <option>2:00 PM - 4:00 PM</option>
-            <option>4:00 PM - 6:00 PM</option>
-          </select>
-        </label>
-        <label className="text-sm sm:col-span-2">Full address*
-          <textarea required value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} className={inputClasses} rows={2} />
-        </label>
-        <label className="text-sm">Landmark
-          <input value={form.landmark} onChange={(e) => setForm({ ...form, landmark: e.target.value })} className={inputClasses} />
-        </label>
-        <label className="text-sm">Payment preference
-          <select value={form.payment} onChange={(e) => setForm({ ...form, payment: e.target.value as "Cash" | "UPI" })} className={inputClasses}>
-            <option>Cash</option>
-            <option>UPI</option>
-          </select>
-        </label>
-        <label className="text-sm sm:col-span-2">Issue description (optional)
-          <textarea value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className={inputClasses} rows={3} />
-        </label>
+        <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
+          <label className="text-sm">Customer name*
+            <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm">Mobile number*
+            <input required value={form.mobile} onChange={(e) => setForm({ ...form, mobile: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm">Bike brand
+            <input value={form.bikeBrand} onChange={(e) => setForm({ ...form, bikeBrand: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm">Bike model
+            <input value={form.bikeModel} onChange={(e) => setForm({ ...form, bikeModel: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm sm:col-span-2">Service needed*
+            <select required value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className={inputClasses}>
+              <option value="">Select a service</option>
+              {services.map((service) => (
+                <option value={service.name} key={service.id}>{service.name}</option>
+              ))}
+            </select>
+          </label>
+          <label className="text-sm">Preferred date*
+            <input type="date" required value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm">Preferred time slot*
+            <select required value={form.timeSlot} onChange={(e) => setForm({ ...form, timeSlot: e.target.value })} className={inputClasses}>
+              <option value="">Select slot</option>
+              <option>8:00 AM - 10:00 AM</option>
+              <option>10:00 AM - 12:00 PM</option>
+              <option>12:00 PM - 2:00 PM</option>
+              <option>2:00 PM - 4:00 PM</option>
+              <option>4:00 PM - 6:00 PM</option>
+            </select>
+          </label>
+          <label className="text-sm sm:col-span-2">Full address*
+            <textarea required value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} className={inputClasses} rows={2} />
+          </label>
+          <label className="text-sm">Landmark
+            <input value={form.landmark} onChange={(e) => setForm({ ...form, landmark: e.target.value })} className={inputClasses} />
+          </label>
+          <label className="text-sm">Payment preference
+            <select value={form.payment} onChange={(e) => setForm({ ...form, payment: e.target.value as "Cash" | "UPI" })} className={inputClasses}>
+              <option>Cash</option>
+              <option>UPI</option>
+            </select>
+          </label>
+          <label className="text-sm sm:col-span-2">Issue description (optional)
+            <textarea value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className={inputClasses} rows={3} />
+          </label>
 
-        {error && <p className="text-sm font-medium text-rose-300 sm:col-span-2">{error}</p>}
-        {success && <p className="text-sm font-medium text-emerald-300 sm:col-span-2">{success}</p>}
+          {error && <p className="text-sm font-medium text-rose-600 sm:col-span-2">{error}</p>}
+          {success && <p className="text-sm font-medium text-emerald-700 sm:col-span-2">{success}</p>}
 
-        <button
-          disabled={loading}
-          className="rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 disabled:opacity-60 sm:col-span-2"
-        >
-          {loading ? "Submitting booking..." : "Confirm Booking"}
-        </button>
-      </form>
+          <button disabled={loading} className="btn-primary sm:col-span-2">
+            {loading ? "Submitting booking..." : "Confirm Booking"}
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
